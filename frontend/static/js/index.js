@@ -1,4 +1,10 @@
 //routes config
+
+const navigateTo = url => {
+    history.pushState(null, null, url);
+    router();
+};
+
 const router = async () => {
     const routes = [
         {path: "/", view: () => console.log("HOME")},
@@ -26,6 +32,17 @@ const router = async () => {
     console.log(match.route.view());
 };
 
+window.addEventListener("popstate", router);
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    //Goes to the actual route without the page refresh
+    document.body.addEventListener("click", e => {
+        if(e.target.matches("[data-link]")){
+            e.preventDefault();
+            navigateTo(e.target.href);
+        }
+    });
+
     router();
 });
