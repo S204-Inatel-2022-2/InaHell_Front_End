@@ -1,3 +1,7 @@
+import Home from "./views/Home.js";
+import Vamos_la from "./views/Vamos_la.js";
+import Surpreenda from "./views/Surpreenda.js";
+
 //routes config
 
 const navigateTo = url => {
@@ -7,9 +11,9 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        {path: "/", view: () => console.log("HOME")},
-        {path: "/Vamos-la", view: () => console.log("VAMOS LA")},
-        {path: "/Surpreenda-me", view: () => console.log("SURPREENDA-ME")}
+        {path: "/", view: Home}, //reference of the Class Home itself
+        {path: "/Vamos-la", view: Vamos_la},
+        {path: "/Surpreenda-me", view: Surpreenda}
     ];
 
     //test each route for potencial match
@@ -22,14 +26,17 @@ const router = async () => {
 
     let match = potencialMacthes.find(potencialMacth => potencialMacth.isMatch);
 
-    //Resolvind undefined routes case
+    //Resolving undefined routes case
     if (!match){
         match = {
             route: routes[0], //in case there's an unknown route the default is "home" (/)
             isMatch: true
         };
     }
-    console.log(match.route.view());
+
+    const view = new match.route.view();
+
+    document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
 window.addEventListener("popstate", router);
