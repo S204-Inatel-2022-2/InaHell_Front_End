@@ -1,0 +1,15 @@
+{
+  "name": "inahell_front_end",
+  "version": "1.0.0",
+  "description": "Repositório destinado ao Front End da aplicação.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
