@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <head>
+    <meta charset="UTF-8" />
     <title>Pick Me</title>
-    <link rel="stylesheet" href="/static/css/index.css">
-</head>
+    <link rel="stylesheet" href="static/css/index.css" />
+  </head>
 
-<body background="/static/assets/background.png">
-
-    <nav class="nav">
-        <a href="/" class="nav__link" data-link>Home</a>
-        <a href="/Vamos-la" class="nav__link" data-link>Vamos lá</a>
-        <a href="/Surpreenda-me" class="nav__link" data-link>Surpreenda-me</a>
-    </nav>
-
-    <div id="app"></div>
-
+  <body>
+    <div class="banner">
+      <div class="navbar">
+        <ul>
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="/Vamos-la" class="nav__link">Vamos lá</a></li>
+          <li><a href="/Surpreenda-me" class="nav__link">Surpreenda-me</a></li>
+        </ul>
+      </div>
+      <img src="static/assets/titulo.png" class="logo" />
+      <div class="content">
+        <img src="static/assets/claqueteFilme.png" class="footer" />
+        <div id="app"></div>
+      </div>
+    </div>
     <script type="module" src="/static/js/index.js"></script>
-</body>
+  </body>
 </html>

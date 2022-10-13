@@ -4,12 +4,21 @@
   "description": "Repositório destinado ao Front End da aplicação.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
-  }
+    "express": "^4.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S204-Inatel-2022-2/InaHell_Front_End.git"
+  },
+  "bugs": {
+    "url": "https://github.com/S204-Inatel-2022-2/InaHell_Front_End/issues"
+  },
+  "homepage": "https://github.com/S204-Inatel-2022-2/InaHell_Front_End#readme"
 }
