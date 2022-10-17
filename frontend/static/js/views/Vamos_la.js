@@ -36,6 +36,14 @@ export default class extends AbstractView {
                     <option value="aventura">aventura</option>
                     <option value="ficção">ficção</option>
                   </select>
+                  <select id="platforms" name="platforms">
+                    <option value="Netflix">Netflix</option>
+                    <option value="Hbo">Hbo max</option>
+                    <option value="Disney">Disney plus</option>
+                    <option value="Amazon">Amazon prime video</option>
+                    <option value="Hulu">Hulu</option>
+                    <option value="Apple">Apple TV</option>
+                  </select>
                   <select id="filme_ou_serie" name="filme_ou_serie">
                     <option value="filme">filme</option>
                     <option value="serie">série</option>
