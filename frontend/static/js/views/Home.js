@@ -8,8 +8,17 @@ export default class extends AbstractView{
 
     async getHtml(){
         return `
-            <h1>Olá! Bora assistir algo legal?</h1>
-            <p>Para começar clique <a href="/Vamos-la" data-link>aqui</a>.
+            <div class="content">
+                <h1>Olá! Bora assistir algo legal?</h1>
+                <a>Clique no botão abaixo para começar</a>
+                <div>
+                    <button type="button"><span></span><a href="/Vamos-la" class="nav__link">Vamos lá!</a></button>
+                    <!--<button type="button"><span></span><a href="/Surpreenda-me" class="nav__link">Surpreenda-me</a></button>-->
+                </div>
+            </div>
+            <div class="footer">
+                <img src="static/assets/claquete.png" class="claquete"/>
+            </div>
         `;
     }
 }

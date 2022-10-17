@@ -8,8 +8,11 @@ export default class extends AbstractView{
 
     async getHtml(){
         return `
-            <h1>Aqui está algo legal para assitir</h1>
-            <p>Clique aqui para gerar novamente</a>.
+            <div class="content">
+                <h1>Aqui está algo legal para assitir</h1>
+                <p>Clique aqui para gerar novamente</a>.
+            </div>
+
         `;
     }
 }
