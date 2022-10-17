@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 .claquete {
-  width: 500px;
+  width: 400px;
 }
 .content {
   width: 100%;
@@ -48,7 +48,7 @@ button {
   margin: 20px 10px;
   border-radius: 25px;
   font-weight: bold;
-  border: 2px solid #b15000;
+  border: 2px solid #6B3999;
   background: transparent;
   color: #fff;
   cursor: pointer;
@@ -56,7 +56,7 @@ button {
   overflow: hidden;
 }
 span {
-  background: #b15000;
+  background: #6B3999;
   height: 100%;
   width: 0;
   border-radius: 25px;
@@ -82,8 +82,9 @@ p {
   text-transform: uppercase;
 }
 h1 {
-  color: #b15000;
+  color: #6B3999;
 }
 .bonecos{
   width: 200px;
 }
+

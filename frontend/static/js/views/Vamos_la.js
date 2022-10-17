@@ -29,11 +29,11 @@ export default class extends AbstractView {
                     <option value="18">18 +</option>
                   </select>
                   <select id="genero_fav" name="genero_fav">
+                    <option value="comédia">comédia</option>
                     <option value="terror">terror</option>
                     <option value="romance">romance</option>
                     <option value="ação">ação</option>
                     <option value="aventura">aventura</option>
-                    <option value="comédia">comédia</option>
                     <option value="ficção">ficção</option>
                   </select>
                   <select id="filme_ou_serie" name="filme_ou_serie">

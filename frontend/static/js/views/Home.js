@@ -17,7 +17,7 @@ export default class extends AbstractView{
                 </div>
             </div>
             <div class="footer">
-                <img src="static/assets/claquete.png" class="claquete"/>
+                <img src="static/assets/claqueteLado.png" class="claquete"/>
             </div>
         `;
     }
