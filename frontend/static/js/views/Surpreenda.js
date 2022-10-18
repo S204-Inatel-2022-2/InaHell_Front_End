@@ -10,7 +10,7 @@ export default class extends AbstractView{
         return `
             <div class="content">
                 <h1>Aqui está algo legal para assitir</h1>
-                <p>Clique aqui para gerar novamente</a>.
+                <p>Clique <a href="/Surpreenda-me">aqui</a> para gerar novamente</p>
             </div>
 
         `;
