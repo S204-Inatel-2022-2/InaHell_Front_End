@@ -2,6 +2,11 @@ import Home from "./views/Home.js";
 import Vamos_la from "./views/Vamos_la.js";
 import Surpreenda from "./views/Surpreenda.js";
 import Final from "./views/Final.js";
+import Idade from "./views/Idade.js";
+import Genero from "./views/Genero.js";
+import Filme_Serie from "./views/Filme_Serie.js";
+import Plataforma from "./views/Plataforma.js";
+
 //routes config
 
 const navigateTo = url => {
@@ -14,7 +19,11 @@ const router = async () => {
         {path: "/", view: Home}, //reference of the Class Home itself
         {path: "/Vamos-la", view: Vamos_la},
         {path: "/Surpreenda-me", view: Surpreenda},
-        {path: "/Final", view: Final}
+        {path: "/Final", view: Final},
+        {path: "/Idade", view: Idade},
+        {path: "/Genero", view: Genero},
+        {path: "/Filme_Serie", view: Filme_Serie},
+        {path: "/Plataforma", view: Plataforma}
     ];
 
     //test each route for potencial match
