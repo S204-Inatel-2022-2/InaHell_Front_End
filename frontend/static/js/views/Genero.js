@@ -13,8 +13,15 @@ export default class extends AbstractView{
             </div>
             <div class="content">
                 <h1>Gênero</h1>
-                <button type="button"><span></span><a href="/Filme_Serie" class="nav__link">Próximo</a></button>
-                <button type="button"><span></span><a href="/Idade" class="nav__link">Anterior</a></button>
+
+                <input type="image" src="static/assets/claqueteRomance.png" class="bonecos"/>
+                <input type="image" src="static/assets/claqueteTerror.png" class="bonecos"/>
+                <input type="image" src="static/assets/claqueteAction.png" class="bonecos"/>
+
+                <div class="prev_next">
+                    <button type="button"><span></span><a href="/Idade" class="nav__link"><<< Anterior</a></button>
+                    <button type="button"><span></span><a href="/Filme_Serie" class="nav__link">Próximo >>></a></button>
+                </div>
             </div>
 
             <div class="footer">

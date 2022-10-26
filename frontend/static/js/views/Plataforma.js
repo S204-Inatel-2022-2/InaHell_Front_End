@@ -13,8 +13,8 @@ export default class extends AbstractView{
             </div>
             <div class="content">
                 <h1>Plataforma</h1>
-                <button type="button"><span></span><a href="/Final" class="nav__link">Próximo</a></button>
-                <button type="button"><span></span><a href="/Filme_Serie" class="nav__link">Anterior</a></button>
+                <button type="button"><span></span><a href="/Filme_Serie" class="nav__link"><<< Anterior</a></button>
+                <button type="button"><span></span><a href="/Final" class="nav__link">Próximo >>></a></button>
             </div>
 
             <div class="footer">

@@ -13,10 +13,6 @@ export default class extends AbstractView {
             </div>
             <div class="content">
 
-              <input type="image" src="static/assets/claqueteRomance.png" class="bonecos"/>
-              <input type="image" src="static/assets/claqueteTerror.png" class="bonecos"/>
-              <input type="image" src="static/assets/claqueteAction.png" class="bonecos"/>
-
               <div class="perguntas">  
 
                 <form>

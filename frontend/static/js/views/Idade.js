@@ -13,10 +13,11 @@ export default class extends AbstractView{
             </div>
             <div class="content">
                 <h1>Idade</h1>
-                <button type="button"><span></span><a href="/Genero" class="nav__link">Próximo</a></button>
-                <button type="button"><span></span><a href="/Home" class="nav__link">Anterior</a></button>
             </div>
-
+            <div class="home_content">
+                <button type="button"><span></span><a href="/Home" class="nav__link"><<< Anterior</a></button>
+                <button type="button"><span></span><a href="/Genero" class="nav__link">Próximo >>></a></button>
+            </div>
             <div class="footer">
                 <img src="static/assets/claqueteLado.png" class="claquete"/>
             </div>

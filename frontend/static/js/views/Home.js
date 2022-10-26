@@ -11,7 +11,7 @@ export default class extends AbstractView{
             <div class="title">
                 <a name="inicio" href="/"><input type="image" src="static/assets/logo.png" class="logo"/></a>
             </div>
-            <div class="content">
+            <div class="home_content">
     
                 <h1>Olá! Bora assistir algo legal?</h1>
                 <a>Clique no botão abaixo para começar</a>
