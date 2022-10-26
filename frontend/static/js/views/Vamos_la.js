@@ -3,11 +3,14 @@ import AbstractView from "./AbstractView.js";
 export default class extends AbstractView {
   constructor() {
     super();
-    this.setTitle("Vamos lá");
+    this.setTitle("PickMe");
   }
 
   async getHtml() {
     return `
+            <div class="home_button">
+              <a name="inicio" href="/"><input type="image" src="static/assets/logo.png" class="click_home"/></a>
+            </div>
             <div class="content">
 
               <input type="image" src="static/assets/claqueteRomance.png" class="bonecos"/>
@@ -48,7 +51,8 @@ export default class extends AbstractView {
                     <option value="filme">filme</option>
                     <option value="serie">série</option>
                   </select>
-                  <a href="/"><input type="submit" value="Próximo"/></a>
+                  <button type="button"><span></span><a href="/Final" class="nav__link">Próximo</a></button>
+                  <button type="button"><span></span><a href="/Home" class="nav__link">Anterior</a></button>
                 </form>
               </div>
             </div>

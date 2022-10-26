@@ -3,12 +3,16 @@ import AbstractView from "./AbstractView.js";
 export default class extends AbstractView{
     constructor(){
         super();
-        this.setTitle("Home");
+        this.setTitle("PickMe");
     }
 
     async getHtml(){
         return `
+            <div class="title">
+                <a name="inicio" href="/"><input type="image" src="static/assets/logo.png" class="logo"/></a>
+            </div>
             <div class="content">
+    
                 <h1>Olá! Bora assistir algo legal?</h1>
                 <a>Clique no botão abaixo para começar</a>
                 <div>

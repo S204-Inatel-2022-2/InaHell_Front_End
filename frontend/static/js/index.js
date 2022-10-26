@@ -1,7 +1,7 @@
 import Home from "./views/Home.js";
 import Vamos_la from "./views/Vamos_la.js";
 import Surpreenda from "./views/Surpreenda.js";
-
+import Final from "./views/Final.js";
 //routes config
 
 const navigateTo = url => {
@@ -13,7 +13,8 @@ const router = async () => {
     const routes = [
         {path: "/", view: Home}, //reference of the Class Home itself
         {path: "/Vamos-la", view: Vamos_la},
-        {path: "/Surpreenda-me", view: Surpreenda}
+        {path: "/Surpreenda-me", view: Surpreenda},
+        {path: "/Final", view: Final}
     ];
 
     //test each route for potencial match
