@@ -110,4 +110,6 @@ h1 {
 .bonecos{
   width: 160px;
 }
-
+.radio_inline{
+  display: inline-block;
+}
