@@ -8,17 +8,17 @@ export let movieTitle = {}
 export let movieDescription = {}
 export let ReleaseYear = {}
 
-function getMovieTitle (info: object){
+export function getMovieTitle (info: object){
   movieTitle = info
   console.log(movieTitle)
 }
 
-function getMovieDescription (info: object){
+export function getMovieDescription (info: object){
   movieDescription = info
   console.log(movieDescription)
 }
 
-function getMovieReleaseYear (info: object){
+export function getMovieReleaseYear (info: object){
   ReleaseYear = info
   console.log(ReleaseYear)
 }
@@ -33,8 +33,8 @@ export default function Home() {
 
     try {
 
-      fetch('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMePost', {
-        method: 'POST',
+      fetch('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
