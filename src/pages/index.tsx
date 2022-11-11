@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import appPreviewImg from '../assets/claquete.png'
 import logoImg from '../assets/logo.png'
-//import { api } from '../lib/axios'
+import axios from 'axios';
 import { FormEvent, useState } from 'react'
 
 export let movieTitle = {}
@@ -26,27 +26,27 @@ export function getMovieReleaseYear (info: object){
 export default function Home() {
 
   const [preferences, setPreferences] = useState('')
-  console.log(preferences)
 
   async function generateRecommendation(event: FormEvent) {
     event.preventDefault()
 
     try {
-
-      fetch('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: preferences,
-      })
-      .then( (response) => response.json())
-      .then((data) => {alert('Aqui está uma indicação para você: ' + data.title), 
-      console.log(data), 
-      getMovieTitle(data.title),
-      getMovieDescription(data.description),
-      getMovieReleaseYear(data.release_year)}) // output will be the required data
-      .catch( (error) => console.log(error))
+      
+      const response = await axios.get('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
+        params: {
+          age: 11,
+          genre: "Adventure, Comedy",
+          movie_or_series: "Movie, TV Show",
+          time_to_spend: 100,
+          platforms: "Disney",
+          year: 2020
+        }
+      }).then((response) => {alert('Aqui está uma indicação para você: ' + response.data.title), 
+      console.log(response.data), 
+      getMovieTitle(response.data.title),
+      getMovieDescription(response.data.description),
+      getMovieReleaseYear(response.data.release_year)})
+      .catch( (error) => alert(error.response.data))
 
       setPreferences('')
 
