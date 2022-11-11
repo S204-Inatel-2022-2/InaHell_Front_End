@@ -1,29 +1,32 @@
 {
-  "name": "inahell_front_end",
-  "version": "1.0.0",
-  "description": "Repositório destinado ao Front End da aplicação.",
-  "main": "index.js",
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
+    "dev": "next dev",
     "test": "jest",
-    "start": "node server.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "cypress:open": "cypress open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cypress": "^10.10.0",
-    "express": "^4.18.2"
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.8",
+    "axios": "^1.1.3",
+    "cypress": "^10.11.0",
+    "eslint": "8.26.0",
+    "eslint-config-next": "13.0.1",
+    "next": "13.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.8.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/S204-Inatel-2022-2/InaHell_Front_End.git"
-  },
-  "bugs": {
-    "url": "https://github.com/S204-Inatel-2022-2/InaHell_Front_End/issues"
-  },
-  "homepage": "https://github.com/S204-Inatel-2022-2/InaHell_Front_End#readme",
   "devDependencies": {
-    "jest": "^29.2.0"
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.18",
+    "react-test-renderer": "^18.2.0",
+    "tailwindcss": "^3.2.1"
   }
 }
