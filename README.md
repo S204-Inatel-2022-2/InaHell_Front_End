@@ -1,2 +1,3 @@
-# NLW_Web
-Hospedar a aplicação
+# PickMe Front End
+
+ - npm run dev
