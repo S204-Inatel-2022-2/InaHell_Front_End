@@ -1,10 +1,19 @@
 import Link from 'next/link'
 
 import Image from 'next/image'
-import appPreviewImg from '../assets/claquete.png'
-import logoImg from '../assets/logo.png'
 import axios from 'axios';
 import { FormEvent, useState } from 'react'
+
+
+
+import age from '../age';
+//import genre from '../genre';
+//import movie_or_tv from '../movie_or_tv';
+//import duration from '../duration';
+//import platforms from '../platforms';
+//import released from '../released';
+
+
 
 export let movieTitle = {}
 export let movieDescription = {}
@@ -33,15 +42,15 @@ export default function Home() {
     event.preventDefault()
 
     try {
-      
+      /*
       const response = await axios.get('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
         params: {
-          age: 11,
-          genre: preferences,
-          movie_or_series: "Movie, TV Show",
-          time_to_spend: 100,
-          platforms: "Disney",
-          year: 2020
+          age: age, //int
+          genre: genre, //string
+          movie_or_series: movie_or_tv, //sting
+          time_to_spend: duration, //int
+          platforms: platforms, //string
+          year: released //int
         }
       }).then((response) => {alert('Aqui está uma indicação para você: ' + response.data.title), 
       console.log(response.data), 
@@ -51,7 +60,7 @@ export default function Home() {
       .catch( (error) => alert(error.response.data))
 
       setPreferences('')
-
+      */
     } catch (err) {
       console.log(err)
       alert('Falha ao gerar indicação, tente novamente!')
@@ -59,28 +68,19 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-[1124px] h-screen mr-52 ml-72 grid grid-cols-2 items-center">
-      <main className="mb-36">
-        <Image src={logoImg} alt="Logo" className="mt-6"/>
+    <div className="max-w-[1124px] h-screen mr-72 ml-72 items-center">
+      <main className="mb-36 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Insira as suas preferências e te indicaremos algo legal para assistir!
+          Aqui está algo legal para assistir!
         </h1>
 
         <form onSubmit={generateRecommendation} className="mt-10 flex gap-2">
-          <input 
-            className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100"
-            type="text" 
-            required 
-            placeholder="Preferências" 
-            onChange={event => setPreferences(event.target.value)}
-            value={preferences}
-          />
-          <Link href="/age"><button 
+          <Link href="/"><button 
             className="bg-orange-500 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-orange-700"
             type="submit"
           >
-            Vamos lá!
+            Refazer!
           </button></Link>
         </form>
 
@@ -88,12 +88,6 @@ export default function Home() {
           Ao clicar você receberá uma indicação
         </p>
       </main>
-
-      <Image 
-        src={appPreviewImg} 
-        alt="" 
-        quality={100}
-      />
     </div>
   )
 }
