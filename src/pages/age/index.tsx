@@ -1,6 +1,12 @@
 import Image from 'next/image'
 import appPreviewImg from '../../assets/claquete.png'
+import logo from '../../assets/logo.png'
 import { FormEvent, useState } from 'react'
+
+import ButtonNext from '../../components/Buttons';
+import ButtonPrevious from '../../components/Buttons';
+
+import Title from '../../components/Title';
 
 export let idade = ''
 
@@ -16,7 +22,20 @@ export default function Age() {
   }
 
   return (
-    <div className="max-w-[1124px] h-screen mr-72 ml-72 items-center">
+    <div className="max-w-[1124px] h-screen mr-72 ml-6 grid grid-cols-2 items-center">
+
+      <div className='text-gray-100'>
+        <Title>
+          <a href="/"><Image 
+            src={logo} 
+            alt="" 
+            quality={100}
+            width={180}
+            height={180}
+          /></a>
+        </Title>
+      </div>
+
       <main className="mb-36 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
@@ -47,5 +66,6 @@ export default function Age() {
       </main>
 
     </div>
+
   )
 }
