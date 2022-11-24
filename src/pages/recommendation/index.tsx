@@ -34,23 +34,36 @@ export function getMovieReleaseYear (info: object){
   console.log(ReleaseYear)
 }
 
-export default function Home() {
+interface RecommendationProps {
+    movieTitle: string
+    movieDescription: string
+    releaseYear: number
+}
 
-  const [preferences, setPreferences] = useState('')
+export default function Recommendation(props: RecommendationProps) {
+
 
   async function generateRecommendation(event: FormEvent) {
     event.preventDefault()
 
     try {
-      /*
+      
       const response = await axios.get('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
         params: {
-          age: age, //int
-          genre: genre, //string
-          movie_or_series: movie_or_tv, //sting
-          time_to_spend: duration, //int
-          platforms: platforms, //string
-          year: released //int
+            age: 20, 
+            genre: "Comedy", 
+            movie_or_series: "Movie, TV Show", 
+            time_to_spend: 100, 
+            platforms: "Disney, Netflix", 
+            year: 2000 
+        /*
+          age: age, 
+          genre: genre, 
+          movie_or_series: movie_or_tv, 
+          time_to_spend: duration, 
+          platforms: platforms, 
+          year: released 
+        */
         }
       }).then((response) => {alert('Aqui está uma indicação para você: ' + response.data.title), 
       console.log(response.data), 
@@ -58,9 +71,7 @@ export default function Home() {
       getMovieDescription(response.data.description),
       getMovieReleaseYear(response.data.release_year)})
       .catch( (error) => alert(error.response.data))
-
-      setPreferences('')
-      */
+      
     } catch (err) {
       console.log(err)
       alert('Falha ao gerar indicação, tente novamente!')
@@ -76,17 +87,28 @@ export default function Home() {
         </h1>
 
         <form onSubmit={generateRecommendation} className="mt-10 flex gap-2">
-          <Link href="/"><button 
+          <button 
             className="bg-orange-500 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-orange-700"
             type="submit"
           >
-            Refazer!
-          </button></Link>
+            Gerar indicação!
+          </button>
         </form>
 
         <p className="mt-4 text-sm text-gray-300 leading-relaxed">
           Ao clicar você receberá uma indicação
         </p>
+
+
+
+        <div className="flex flex-col mt-8">
+            <span className="font-bold text-2xl text-gray-300">Título: {props.movieTitle}</span>
+            <span className="font-bold text-2xl text-gray-300 mt-4">Lançamento: {props.releaseYear}</span>
+            <span className="font-bold text-2xl text-gray-300 mt-4">Sinopse: {props.movieDescription}</span>
+        </div>
+  
+
+
       </main>
     </div>
   )

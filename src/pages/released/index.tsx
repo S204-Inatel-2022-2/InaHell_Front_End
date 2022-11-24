@@ -42,15 +42,7 @@ export default function Released() {
           Você deve selecionar para avançar para a próxima página
         </p>
 
-        <Image 
-          src={appPreviewImg}
-          alt="" 
-          quality={100}
-          width={400}
-          height={400}
-        />
       </main>
-
 
     </div>
   )

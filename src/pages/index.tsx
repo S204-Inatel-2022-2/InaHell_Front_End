@@ -60,39 +60,28 @@ export default function Home() {
 
   return (
     <div className="max-w-[1124px] h-screen mr-52 ml-72 grid grid-cols-2 items-center">
-      <main className="mb-36">
+      <main className="mt-16 mb-36">
         <Image src={logoImg} alt="Logo" className="mt-6"/>
 
-        <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Insira as suas preferências e te indicaremos algo legal para assistir!
+        <h1 className="mt-8 mb-8 text-white text-4xl font-bold leading-tight">
+          Insira suas preferências e te indicaremos algo legal para assistir!
         </h1>
 
-        <form onSubmit={generateRecommendation} className="mt-10 flex gap-2">
-          <input 
-            className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100"
-            type="text" 
-            required 
-            placeholder="Preferências" 
-            onChange={event => setPreferences(event.target.value)}
-            value={preferences}
-          />
-          <Link href="/age"><button 
-            className="bg-orange-500 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-orange-700"
+        <Link href="/age"><button 
+            className="bg-orange-500 px-6 py-4 rounded text-gray-900 font-extrabold text-3xl hover:bg-orange-700"
             type="submit"
           >
             Vamos lá!
-          </button></Link>
-        </form>
-
-        <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-          Ao clicar você receberá uma indicação
-        </p>
+          </button>
+        </Link>
       </main>
 
       <Image 
         src={appPreviewImg} 
         alt="" 
         quality={100}
+        width={500}
+        height={500}
       />
     </div>
   )
