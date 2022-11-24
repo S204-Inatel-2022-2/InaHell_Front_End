@@ -18,7 +18,7 @@ export default function Movie_or_Tv() {
       <main className="mb-36 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Selecione sua faixa etária
+          Filminho ou seriezinha?
         </h1>
 
         <form onSubmit={SetMovie_or_Tv} className="mt-10 flex gap-2">

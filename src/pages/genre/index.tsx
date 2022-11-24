@@ -18,7 +18,7 @@ export default function Genre() {
       <main className="mb-36 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Selecione sua faixa etária
+          Selecione o gênero que mais gostaria de assistir
         </h1>
 
         <form onSubmit={SetGenre} className="mt-10 flex gap-2">
