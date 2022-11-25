@@ -1,12 +1,11 @@
 import Image from 'next/image'
 import appPreviewImg from '../../assets/claquete.png'
-import logo from '../../assets/logo.png'
 import { FormEvent, useState } from 'react'
 
-import ButtonNext from '../../components/Buttons';
-import ButtonPrevious from '../../components/Buttons';
-
+import ButtonPrevious from '../../components/ButtonPrevious';
+import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
+
 
 export let idade = ''
 
@@ -19,24 +18,24 @@ export default function Age() {
 
     console.log(age)
     idade = age
+
+
   }
 
   return (
-    <div className="max-w-[1124px] h-screen mr-72 ml-6 grid grid-cols-2 items-center">
+    <div className="grid grid-cols-6 gap-4">
 
-      <div className='text-gray-100'>
-        <Title>
-          <a href="/"><Image 
-            src={logo} 
-            alt="" 
-            quality={100}
-            width={180}
-            height={180}
-          /></a>
-        </Title>
+      <div className='text-gray-100 ml-6 mt-10'>
+        <Title></Title>
+
+        <div className='ml-16 mt-44'>
+          <ButtonPrevious path="/">
+            <p className='text-white ml-3'>Voltar</p>
+          </ButtonPrevious>
+        </div>
       </div>
 
-      <main className="mb-36 mt-20">
+      <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
           Selecione sua faixa etária
@@ -57,13 +56,30 @@ export default function Age() {
           >
             Vamos lá!
           </button>
+
         </form>
 
         <p className="mt-4 text-sm text-gray-300 leading-relaxed">
           Você deve selecionar para avançar para a próxima página
         </p>
 
-      </main>
+      </div>
+
+      <div className='ml-14 mt-64'>
+        <ButtonNext path="/genre">
+          <p className='text-white ml-1'>Avançar</p>
+        </ButtonNext>
+      </div>
+
+      <div className='col-start-5 col-end-7 mt-6'>
+        <Image 
+          src={appPreviewImg} 
+          alt="" 
+          quality={100}
+          width={500}
+          height={500}
+        />
+      </div>
 
     </div>
 

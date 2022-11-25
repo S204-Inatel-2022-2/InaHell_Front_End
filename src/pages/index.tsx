@@ -68,7 +68,7 @@ export default function Home() {
         </h1>
 
         <Link href="/age"><button 
-            className="bg-orange-500 px-6 py-4 rounded text-gray-900 font-extrabold text-3xl hover:bg-orange-700"
+            className="bg-orange-500 px-6 py-4 rounded text-black font-extrabold text-3xl hover:bg-orange-700"
             type="submit"
           >
             Vamos lá!
