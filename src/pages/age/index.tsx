@@ -5,7 +5,7 @@ import { FormEvent, useState } from 'react'
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
-import InputAgeRangeSlider from '../../components/AgeRange' 
+import InputAgeRangeSlider from '../../components/InputRange' 
 
 import Genre from '../genre';
 
@@ -38,11 +38,11 @@ export default function Age() {
       <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Selecione sua faixa etária
+          Selecione sua idade: {age}
         </h1>
 
-        <div className='mt-20 '>
-          <InputAgeRangeSlider currentAge={age} updateMainAge={setAge} />
+        <div className='mt-20'>
+          <InputAgeRangeSlider currentValue={age} updateMainValue={setAge} minValue={0} maxValue={120} />
         </div>
         
         <form onSubmit={Genre} className="mt-10 flex gap-2">
