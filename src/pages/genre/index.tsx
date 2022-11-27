@@ -5,6 +5,7 @@ import { FormEvent, useState } from 'react'
 
 export default function Genre() {
 
+  alert("teste")
   const [genre, setPreferences] = useState('')
 
   async function SetGenre(event: FormEvent) {

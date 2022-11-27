@@ -5,21 +5,21 @@ import { FormEvent, useState } from 'react'
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
+import InputAgeRangeSlider from '../../components/AgeRange' 
 
+import Genre from '../genre';
 
 export let idade = ''
 
 export default function Age() {
 
-  const [age, setPreferences] = useState('')
+  const [age, setAge] = useState('')
 
   async function SetAge(event: FormEvent) {
     event.preventDefault()
 
     console.log(age)
     idade = age
-
-
   }
 
   return (
@@ -41,13 +41,17 @@ export default function Age() {
           Selecione sua faixa etária
         </h1>
 
-        <form onSubmit={SetAge} className="mt-10 flex gap-2">
+        <div className='mt-20 '>
+          <InputAgeRangeSlider currentAge={age} updateMainAge={setAge} />
+        </div>
+        
+        <form onSubmit={Genre} className="mt-10 flex gap-2">
           <input 
             className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100"
             type="text" 
             required 
             placeholder="Idade" 
-            onChange={event => setPreferences(event.target.value)}
+            onChange={event => setAge(event.target.value)}
             value={age}
           />
           <button 
