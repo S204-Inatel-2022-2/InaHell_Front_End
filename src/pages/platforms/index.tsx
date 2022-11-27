@@ -2,6 +2,15 @@ import Image from 'next/image'
 import appPreviewImg from '../../assets/claquete.png'
 import { FormEvent, useState } from 'react'
 
+import ButtonPrevious from '../../components/ButtonPrevious';
+import ButtonNext from '../../components/ButtonNext';
+import Title from '../../components/Title';
+
+import disney from '../../assets/disneyPlus.png'
+import hbo from '../../assets/hboMax.png'
+import netflix from '../../assets/netflix.png'
+import prime from '../../assets/primeVideo.png'
+
 
 export default function Platform() {
 
@@ -14,35 +23,74 @@ export default function Platform() {
   }
 
   return (
-    <div className="max-w-[1124px] h-screen mr-72 ml-72 items-center">
-      <main className="mb-36 mt-20">
+    <div className="grid grid-cols-6 gap-4">
+
+      <div className='ml-6 mt-10'>
+        <Title></Title>
+
+        <div className='ml-16 mt-44'>
+          <ButtonPrevious path="filters">
+            <p className='text-white ml-3'>Voltar</p>
+          </ButtonPrevious>
+        </div>
+      </div>
+
+      <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
           Selecione seu(s) serviço(s) de streaming
         </h1>
 
-        <form onSubmit={SetPlatforms} className="mt-10 flex gap-2">
-          <input 
-            className="flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100"
-            type="" 
-            required 
-            placeholder="Plataformas" 
-            onChange={event => setPreferences(event.target.value)}
-            value={platforms}
-          />
-          <button 
-            className="bg-orange-500 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-orange-700"
-            type="submit"
-          >
-            Vamos lá!
-          </button>
-        </form>
+        <div className="mt-24 grid grid-cols-4 gap-4">
+          <div>
+            <Image 
+              src={disney} 
+              alt="" 
+              quality={100}
+              width={200}
+              height={200}
+            />
+          </div>
 
-        <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-          Você deve selecionar para avançar para a próxima página
-        </p>
+          <div>
+            <Image 
+              src={hbo} 
+              alt="" 
+              quality={100}
+              width={200}
+              height={200}
+            />
+          </div>
 
-      </main>
+          <div>
+            <Image 
+              src={netflix} 
+              alt="" 
+              quality={100}
+              width={200}
+              height={200}
+            />
+          </div>
+
+          <div>
+            <Image 
+              src={prime} 
+              alt="" 
+              quality={100}
+              width={200}
+              height={200}
+            />
+          </div>
+
+        </div>
+      </div>
+
+      
+      <div className='ml-14 mt-64'>
+        <ButtonNext path="/recommendation">
+          <p className='text-white ml-1'>Avançar</p>
+        </ButtonNext>
+      </div>  
 
     </div>
   )

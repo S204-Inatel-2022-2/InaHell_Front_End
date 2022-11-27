@@ -1,17 +1,18 @@
 import Link from 'next/link'
-
 import Image from 'next/image'
 import axios from 'axios';
 import { FormEvent, useState } from 'react'
 
+import ButtonPrevious from '../../components/ButtonPrevious';
+import ButtonNext from '../../components/ButtonNext';
+import Title from '../../components/Title';
 
-
-import age from '../age';
+import age from '../filters';
+import duration from '../filters';
+import year from '../filters';
 //import genre from '../genre';
 //import movie_or_tv from '../movie_or_tv';
-//import duration from '../duration';
 //import platforms from '../platforms';
-//import released from '../released';
 
 
 
@@ -50,12 +51,12 @@ export default function Recommendation(props: RecommendationProps) {
       
       const response = await axios.get('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
         params: {
-            age: 20, 
+            age: age, 
             genre: "Comedy", 
             movie_or_series: "Movie, TV Show", 
-            time_to_spend: 100, 
+            time_to_spend: duration, 
             platforms: "Disney, Netflix", 
-            year: 2000 
+            year: year 
         /*
           age: age, 
           genre: genre, 
@@ -79,8 +80,19 @@ export default function Recommendation(props: RecommendationProps) {
   }
 
   return (
-    <div className="max-w-[1124px] h-screen mr-72 ml-72 items-center">
-      <main className="mb-36 mt-20">
+    <div className="grid grid-cols-6 gap-4">
+
+      <div className='ml-6 mt-10'>
+        <Title></Title>
+
+        <div className='ml-16 mt-44'>
+          <ButtonPrevious path="platforms">
+            <p className='text-white ml-3'>Voltar</p>
+          </ButtonPrevious>
+        </div>
+      </div>
+
+      <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
 
         <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
           Aqui está algo legal para assistir!
@@ -99,17 +111,13 @@ export default function Recommendation(props: RecommendationProps) {
           Ao clicar você receberá uma indicação
         </p>
 
-
-
         <div className="flex flex-col mt-8">
             <span className="font-bold text-2xl text-gray-300">Título: {props.movieTitle}</span>
             <span className="font-bold text-2xl text-gray-300 mt-4">Lançamento: {props.releaseYear}</span>
             <span className="font-bold text-2xl text-gray-300 mt-4">Sinopse: {props.movieDescription}</span>
         </div>
-  
+      </div>
 
-
-      </main>
     </div>
   )
 }
