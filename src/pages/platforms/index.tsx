@@ -42,7 +42,8 @@ export default function Platform() {
         </h1>
 
         <div className="mt-24 grid grid-cols-4 gap-4">
-          <div>
+
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={disney} 
               alt="" 
@@ -52,7 +53,7 @@ export default function Platform() {
             />
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={hbo} 
               alt="" 
@@ -62,7 +63,7 @@ export default function Platform() {
             />
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={netflix} 
               alt="" 
@@ -72,7 +73,7 @@ export default function Platform() {
             />
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={prime} 
               alt="" 

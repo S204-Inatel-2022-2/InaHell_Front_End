@@ -47,7 +47,7 @@ export default function Genre() {
         </h1>
 
         <div className="ml-10 mt-8 grid grid-cols-3 gap-4">
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={action} 
               alt="" 
@@ -55,9 +55,10 @@ export default function Genre() {
               width={200}
               height={200}
             />
+            <p className='text-white text-center mr-10'>Ação</p>
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={comedy} 
               alt="" 
@@ -65,9 +66,10 @@ export default function Genre() {
               width={200}
               height={200}
             />
+            <p className='text-white text-center mr-10'>Comédia</p>
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={drama} 
               alt="" 
@@ -75,9 +77,10 @@ export default function Genre() {
               width={200}
               height={200}
             />
+            <p className='text-white text-center mr-10'>Drama</p>
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={fiction} 
               alt="" 
@@ -85,9 +88,10 @@ export default function Genre() {
               width={200}
               height={200}
             />
+            <p className='text-white text-center mr-10'>Ficção</p>
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={horror} 
               alt="" 
@@ -95,9 +99,10 @@ export default function Genre() {
               width={200}
               height={200}
             />
+            <p className='text-white text-center mr-10'>Terror</p>
           </div>
 
-          <div>
+          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={romance} 
               alt="" 
@@ -105,16 +110,18 @@ export default function Genre() {
               width={200}
               height={200}
             />
+            <p className='text-white text-center mr-10'>Romance</p>
           </div>
+          
         </div>
 
-        <div className='mt-8 text-white'>
-          <h1 className="mb-6 text-white text-2xl font-bold leading-tight">
+        <div className='mt-12 text-white'>
+          <h1 className="text-white text-2xl leading-tight">
             Prefere um filminho ou uma seriezinha?
+            <small className="ml-8 flex-1 text-base text-white text-right pr-2 py-1">Filme</small>
+            <ToggleSwitch id='movie' checked={movie} onChange={setMovie} />
+            <small className="flex-1 text-base text-white text-right pr-2 py-1">Série</small>
           </h1>
-          <small className="flex-1 text-base text-white text-right pr-2 py-1">Filme</small>
-          <ToggleSwitch id='yearly' checked={movie} onChange={setMovie} />
-          <small className="flex-1 text-base text-white text-right pr-2 py-1">Série</small>
         </div>
 
       </div>
