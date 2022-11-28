@@ -5,6 +5,8 @@ import { FormEvent, useState } from 'react'
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
+import ToggleSwitch from '../../components/Toggle/toggleSwitch'
+
 
 import disney from '../../assets/disneyPlus.png'
 import hbo from '../../assets/hboMax.png'
@@ -15,6 +17,8 @@ import prime from '../../assets/primeVideo.png'
 export default function Platform() {
 
   const [platforms, setPreferences] = useState('')
+  const [movie, setMovie] = useState('')
+
 
   async function SetPlatforms(event: FormEvent) {
     event.preventDefault()
@@ -37,13 +41,13 @@ export default function Platform() {
 
       <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
 
-        <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
+        <h1 className="text-white text-4xl font-bold leading-tight">
           Selecione seu(s) serviço(s) de streaming
         </h1>
 
-        <div className="mt-24 grid grid-cols-4 gap-4">
+        <div className="mt-20 grid grid-cols-4 gap-4">
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={disney} 
               alt="" 
@@ -53,7 +57,7 @@ export default function Platform() {
             />
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={hbo} 
               alt="" 
@@ -63,7 +67,7 @@ export default function Platform() {
             />
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={netflix} 
               alt="" 
@@ -73,7 +77,7 @@ export default function Platform() {
             />
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={prime} 
               alt="" 
@@ -84,6 +88,16 @@ export default function Platform() {
           </div>
 
         </div>
+
+        <div className='mt-16 text-white'>
+          <h1 className="text-white text-3xl leading-tight">
+            Prefere um filminho ou uma seriezinha?
+            <small className="ml-8 flex-1 text-xl text-white text-right pr-2 py-1">Filme</small>
+            <ToggleSwitch id='movie' checked={movie} onChange={setMovie} />
+            <small className="flex-1 text-xl text-white text-right pr-2 py-1">Série</small>
+          </h1>
+        </div>
+
       </div>
 
       

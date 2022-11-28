@@ -12,14 +12,11 @@ import romance from '../../assets/romance.png'
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
-import ToggleSwitch from '../../components/Toggle/toggleSwitch'
 
 
 export default function Genre() {
 
   const [genre, setPreferences] = useState('')
-  const [movie, setMovie] = useState('')
-
 
   async function SetGenre(event: FormEvent) {
     event.preventDefault()
@@ -46,8 +43,8 @@ export default function Genre() {
           Gênero que mais gostaria de assistir
         </h1>
 
-        <div className="ml-10 mt-8 grid grid-cols-3 gap-4">
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+        <div className="ml-8 mt-14 grid grid-cols-3 gap-10">
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={action} 
               alt="" 
@@ -58,7 +55,7 @@ export default function Genre() {
             <p className='text-white text-center mr-10'>Ação</p>
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={comedy} 
               alt="" 
@@ -69,7 +66,7 @@ export default function Genre() {
             <p className='text-white text-center mr-10'>Comédia</p>
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={drama} 
               alt="" 
@@ -80,7 +77,7 @@ export default function Genre() {
             <p className='text-white text-center mr-10'>Drama</p>
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={fiction} 
               alt="" 
@@ -91,7 +88,7 @@ export default function Genre() {
             <p className='text-white text-center mr-10'>Ficção</p>
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={horror} 
               alt="" 
@@ -102,7 +99,7 @@ export default function Genre() {
             <p className='text-white text-center mr-10'>Terror</p>
           </div>
 
-          <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
+          <div className='cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
             <Image 
               src={romance} 
               alt="" 
@@ -113,15 +110,6 @@ export default function Genre() {
             <p className='text-white text-center mr-10'>Romance</p>
           </div>
           
-        </div>
-
-        <div className='mt-12 text-white'>
-          <h1 className="text-white text-2xl leading-tight">
-            Prefere um filminho ou uma seriezinha?
-            <small className="ml-8 flex-1 text-base text-white text-right pr-2 py-1">Filme</small>
-            <ToggleSwitch id='movie' checked={movie} onChange={setMovie} />
-            <small className="flex-1 text-base text-white text-right pr-2 py-1">Série</small>
-          </h1>
         </div>
 
       </div>

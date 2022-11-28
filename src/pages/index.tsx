@@ -25,7 +25,7 @@ export default function Home() {
 
       <div className='col-start-3 col-end-5 mt-2'>
         <Link href="/preferences"><button 
-              className="animate-pulse w-full h-12 px-6 text-indigo-100 transition-colors duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 animate-pulse w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
               type="submit"
             >
               Começar

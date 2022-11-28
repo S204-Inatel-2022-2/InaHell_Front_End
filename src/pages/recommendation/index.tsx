@@ -4,7 +4,6 @@ import axios from 'axios';
 import { FormEvent, useState } from 'react'
 
 import ButtonPrevious from '../../components/ButtonPrevious';
-import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
 
 import age from '../filters';
@@ -23,7 +22,7 @@ export const getServerSideProps = async () => {
         params: {
           age: 12, 
           genre: "Comedy", 
-          movie_or_series: "TV Show", 
+          movie_or_series: "Movie", 
           time_to_spend: 180, 
           platforms: "Disney", 
           year: 2000
