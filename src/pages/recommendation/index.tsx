@@ -103,12 +103,46 @@ export default function Recommendation(props: RecommendationProps) {
           Aqui está algo legal para assistir!
         </h1>
 
-        <div className="flex flex-col mt-8">
-            <span className="font-bold text-2xl text-gray-300">Título: {props.title}</span>
-            <span className="font-bold text-2xl text-gray-300">Lançamento: {props.released}</span>
-            <span className="font-bold text-2xl text-gray-300">Descrição: {props.description}</span>
-            <span className="font-bold text-2xl text-gray-300">Onde assitir: {props.platforms}</span>
-            <span className="font-bold text-2xl text-gray-300">Duração: {props.duration}</span>
+        <div className="mt-8 grid grid-cols-5 gap-4">
+          <div className="flex flex-col col-start-1 col-end-4 text-xl text-white">
+            <span className="">Título: {props.title}</span>
+            <span className="">Lançamento: {props.released}</span>
+            <span className="">Descrição: {props.description}</span>
+            <span className="">Onde assitir: {props.platforms}</span>
+            <span className="">Duração: {props.duration}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className='mt-10 mr-24 ml-24 col-start-2 col-end-6 grid grid-cols-3 gap-10'>
+        <div>
+          <Link href="/recommendation"><button 
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+                type="submit"
+              >
+                Gerar Novamente
+            </button>
+          </Link>
+        </div>
+
+        <div>
+          <Link href="/preferences"><button 
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+                type="submit"
+              >
+                Recomeçar
+            </button>
+          </Link>
+        </div>
+
+        <div>
+          <Link href='https://www.netflix.com/'><button 
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+                type="submit"
+              >
+                Ir para a plataforma
+            </button>
+          </Link>
         </div>
       </div>
 
