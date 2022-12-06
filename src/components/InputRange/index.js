@@ -9,9 +9,10 @@ export default function InputRangeSlider({currentValue, updateMainValue, minValu
 
     return (
         <InputRange
-        minValue={minValue}
-        maxValue={maxValue}
-        value={currentValue}
-        onChange={value => updateValue(value)} />
+            minValue={minValue}
+            maxValue={maxValue}
+            value={currentValue}
+            onChange={value => updateValue(value)}
+        />
     )
 }

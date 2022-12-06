@@ -24,7 +24,7 @@ export const getServerSideProps = async () => {
           genre: "Comedy", 
           movie_or_series: "Movie", 
           time_to_spend: 180, 
-          platforms: "Disney", 
+          platforms: "HBO, AmazonPrime", 
           year: 2000
         /*
           age: age, 
@@ -36,7 +36,6 @@ export const getServerSideProps = async () => {
         */
       } 
     }))
-  
     return {
       props: {
       title: movie_info.data.title,
@@ -51,6 +50,7 @@ export const getServerSideProps = async () => {
     console.log(err)
     alert('Falha ao gerar indicação, tente novamente!')
   }
+
 }
  
 /*
@@ -82,7 +82,13 @@ interface RecommendationProps {
 
 export default function Recommendation(props: RecommendationProps) {
 
-  //defineDuration(props)
+  let type = ''
+  type = props.type
+
+  let movie = false
+  if (type === 'Movie'){
+    movie = true
+  }
 
   return (
     <div className="grid grid-cols-6 gap-4">
@@ -104,17 +110,18 @@ export default function Recommendation(props: RecommendationProps) {
         </h1>
 
         <div className="mt-8 grid grid-cols-5 gap-4">
-          <div className="flex flex-col col-start-1 col-end-4 text-xl text-white">
+          <div className="flex flex-col col-start-1 col-end-7 text-xl text-white">
             <span className="">Título: {props.title}</span>
             <span className="">Lançamento: {props.released}</span>
             <span className="">Descrição: {props.description}</span>
-            <span className="">Onde assitir: {props.platforms}</span>
-            <span className="">Duração: {props.duration}</span>
+            <span className="">Onde assistir: {props.platforms}</span>
+            <span className="">Duração: {props.duration} {movie ? ' minutos' : ' temporadas'}</span> 
           </div>
         </div>
+
       </div>
 
-      <div className='mt-10 mr-24 ml-24 col-start-2 col-end-6 grid grid-cols-3 gap-10'>
+      <div className='mt-8 mr-24 ml-24 col-start-2 col-end-6 grid grid-cols-3 gap-10'>
         <div>
           <Link href="/recommendation"><button 
                 className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "

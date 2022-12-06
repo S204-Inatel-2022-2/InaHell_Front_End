@@ -6,16 +6,16 @@ import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
 import InputRangeSlider from '../../components/InputRange';
+import ToggleSwitch from '../../components/Toggle/toggleSwitch'
 //import currentYear from '../../components/CurrentYear/getCurrentYear'
 
-let movie_serie_duration = 'minutos' //função para distinguir se eh filme ou serie
+export default function Filter() {
 
-
-export default function Age() {
+  const [movie, setMovie] = useState(false)
 
   const [age, setAge] = useState(0)
   const [year, setYear] = useState(1919) //função para pegar o ano atual e setar como maxValue
-  const [duration, setDuration] = useState(1) //função para distinguir se eh filme ou serie
+  const [duration, setDuration] = useState(1) 
 
   return (
     <div className="grid grid-cols-6 gap-4">
@@ -32,8 +32,17 @@ export default function Age() {
 
       <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
 
-        <div className='mt-0'>
-          <h1 className="mb-8 text-white text-2xl font-bold leading-tight">
+        <div className='mt-0 text-white'>
+          <h1 className="text-white text-2xl font-semibold leading-tight">
+            Prefere um filminho ou uma seriezinha?
+            <small className="ml-8 flex-1 text-xl text-white text-right pr-2 py-1">Filme</small>
+            <ToggleSwitch id='movie' checked={movie} onChange={setMovie} />
+            <small className="flex-1 text-xl text-white text-right pr-2 py-1">Série</small>
+          </h1>
+        </div>
+
+        <div className='mt-8'>
+          <h1 className="mb-8 text-white text-xl font-semibold leading-tight">
             Selecione sua idade: {age}
           </h1>
           <InputRangeSlider currentValue={age} updateMainValue={setAge} minValue={0} maxValue={120} />
@@ -42,8 +51,8 @@ export default function Age() {
           </p>
         </div>
 
-        <div className='mt-8'>
-          <h1 className="mb-8 text-white text-2xl font-bold leading-tight">
+        <div className='mt-4'>
+          <h1 className="mb-8 text-white text-xl font-semibold leading-tight">
             Selecione o ano de lançamento: {year}
           </h1>
           <InputRangeSlider currentValue={year} updateMainValue={setYear} minValue={1919} maxValue={2022} />
@@ -52,13 +61,13 @@ export default function Age() {
           </p>
         </div>
 
-        <div className='mt-8'>
-          <h1 className="mb-8 text-white text-2xl font-bold leading-tight">
+        <div className='mt-4'>
+          <h1 className="mb-8 text-white text-xl font-bold leading-tight">
             Selecione a duração: {duration}
           </h1>
-          <InputRangeSlider currentValue={duration} updateMainValue={setDuration} minValue={1} maxValue={300} />
+          <InputRangeSlider currentValue={duration} updateMainValue={setDuration} minValue={1} maxValue={movie ? 20 : 300} />
           <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-            Duração em {movie_serie_duration}
+            Duração em {movie ? ' temporadas' : ' minutos'}
           </p>
         </div>
 
