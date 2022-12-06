@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import axios from 'axios';
-import { FormEvent, useState } from 'react'
+import { FormEvent, useState, useEffect } from 'react'
+
+import { ITask, TaskService } from '../../services/api/tasks/TaskService';
+import { ApiException } from '../../services/api/ApiException'
 
 import ButtonPrevious from '../../components/ButtonPrevious';
 import Title from '../../components/Title';
@@ -13,8 +16,32 @@ import year from '../filters';
 //import movie_or_tv from '../movie_or_tv';
 //import platforms from '../platforms';
 
-export const getServerSideProps = async () => {
+/*
+export const Dashboard = () => {
 
+  useEffect(() => {
+    TaskService.getAll({
+      age: 12, 
+      genre: "Comedy", 
+      movie_or_series: "Movie", 
+      time_to_spend: 180, 
+      platforms: "HBO, AmazonPrime", 
+      year: 2000
+    })
+      .then((result) => {
+        if (result instanceof ApiException) {
+          alert(result.message);
+        } else {
+          console.log(result);
+        }
+      });
+  });
+
+}
+*/
+
+export const getServerSideProps = async () => {
+  
   try{
     const movie_info = await Promise.resolve(
 

@@ -11,11 +11,16 @@ import ToggleSwitch from '../../components/Toggle/toggleSwitch'
 
 export default function Filter() {
 
-  const [movie, setMovie] = useState(false)
+  const [serie, setMovie] = useState(false)
 
   const [age, setAge] = useState(0)
   const [year, setYear] = useState(1919) //função para pegar o ano atual e setar como maxValue
   const [duration, setDuration] = useState(1) 
+
+  let movie_or_series = 'Movie'
+  if(serie === true){
+    movie_or_series = 'TV Show'
+  }
 
   return (
     <div className="grid grid-cols-6 gap-4">
@@ -36,7 +41,7 @@ export default function Filter() {
           <h1 className="text-white text-2xl font-semibold leading-tight">
             Prefere um filminho ou uma seriezinha?
             <small className="ml-8 flex-1 text-xl text-white text-right pr-2 py-1">Filme</small>
-            <ToggleSwitch id='movie' checked={movie} onChange={setMovie} />
+            <ToggleSwitch id='movie' checked={serie} onChange={setMovie} />
             <small className="flex-1 text-xl text-white text-right pr-2 py-1">Série</small>
           </h1>
         </div>
@@ -65,9 +70,9 @@ export default function Filter() {
           <h1 className="mb-8 text-white text-xl font-bold leading-tight">
             Selecione a duração: {duration}
           </h1>
-          <InputRangeSlider currentValue={duration} updateMainValue={setDuration} minValue={1} maxValue={movie ? 20 : 300} />
+          <InputRangeSlider currentValue={duration} updateMainValue={setDuration} minValue={1} maxValue={serie ? 20 : 300} />
           <p className="mt-4 text-sm text-gray-300 leading-relaxed">
-            Duração em {movie ? ' temporadas' : ' minutos'}
+            Duração em {serie ? ' temporadas' : ' minutos'}
           </p>
         </div>
 

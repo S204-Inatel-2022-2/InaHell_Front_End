@@ -11,9 +11,39 @@ import romance from '../../assets/romance.png'
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
+import Options from '../../components/Options/options'
 
 
 export default function Genre() {
+
+  const [gen_action, setAction] = useState(false)
+  const [gen_comedy, setComedy] = useState(false)
+  const [gen_drama, setDrama] = useState(false)
+  const [gen_fiction, setFiction] = useState(false)
+  const [gen_horror, setHorror] = useState(false)
+  const [gen_romance, setRomance] = useState(false)
+
+
+  const platforms = []
+  if(gen_action === true){
+    platforms.push('Action')
+  }
+  if(gen_comedy === true){
+    platforms.push('Comedy')
+  }
+  if(gen_drama === true){
+    platforms.push('Drama')
+  }
+  if(gen_fiction === true){
+    platforms.push('Fiction')
+  }
+  if(gen_horror === true){
+    platforms.push('Horror')
+  }
+  if(gen_romance === true){
+    platforms.push('Romance')
+  }
+  console.log(platforms)
 
   return (
     <div className="grid grid-cols-6 gap-4">
@@ -37,153 +67,51 @@ export default function Genre() {
         <div className="ml-3 mt-8 grid grid-cols-3 gap-10">
 
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={action} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
+            <Options id='disney' checked={gen_action} onChange={setAction} img={action}>
               <header className="px-2.5 py-2.5">
                 <p className="text-lg text-center font-bold tracking-wide text-white">Ação</p>
               </header>
-            </div>
+            </Options>
           </label>
           
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={comedy} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
+            <Options id='disney' checked={gen_comedy} onChange={setComedy} img={comedy}>
               <header className="px-2.5 py-2.5">
                 <p className="text-lg text-center font-bold tracking-wide text-white">Comédia</p>
               </header>
-            </div>
+            </Options>
           </label>
 
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={drama} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
+            <Options id='disney' checked={gen_drama} onChange={setDrama} img={drama}>
               <header className="px-2.5 py-2.5">
                 <p className="text-lg text-center font-bold tracking-wide text-white">Drama</p>
               </header>
-            </div>
+            </Options>
           </label>
           
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={fiction} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
+            <Options id='disney' checked={gen_fiction} onChange={setFiction} img={fiction}>
               <header className="px-2.5 py-2.5">
                 <p className="text-lg text-center font-bold tracking-wide text-white">Ficção</p>
               </header>
-            </div>
+            </Options>
           </label>
 
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={horror} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
+            <Options id='disney' checked={gen_horror} onChange={setHorror} img={horror}>
               <header className="px-2.5 py-2.5">
                 <p className="text-lg text-center font-bold tracking-wide text-white">Terror</p>
               </header>
-            </div>
+            </Options>
           </label>
 
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={romance} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
+            <Options id='disney' checked={gen_romance} onChange={setRomance} img={romance}>
               <header className="px-2.5 py-2.5">
                 <p className="text-lg text-center font-bold tracking-wide text-white">Romance</p>
               </header>
-            </div>
+            </Options>
           </label>
           
         </div>

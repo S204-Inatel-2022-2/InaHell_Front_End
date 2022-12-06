@@ -1,10 +1,9 @@
-import Image from 'next/image'
-import appPreviewImg from '../../assets/claquete.png'
 import { FormEvent, useState } from 'react'
 
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
+import Options from '../../components/Options/options'
 
 import disney from '../../assets/disneyPlus.png'
 import hbo from '../../assets/hboMax.png'
@@ -13,6 +12,27 @@ import prime from '../../assets/primeVideo.png'
 
 
 export default function Platform() {
+
+  const [plat_disney, setDisney] = useState(false)
+  const [plat_hbo, setHbo] = useState(false)
+  const [plat_netflix, setNetflix] = useState(false)
+  const [plat_prime, setPrime] = useState(false)
+
+  const platforms = []
+  if(plat_disney === true){
+    platforms.push('Disney')
+  }
+  if(plat_hbo === true){
+    platforms.push('HBO')
+  }
+  if(plat_netflix === true){
+    platforms.push('Netflix')
+  }
+  if(plat_prime === true){
+    platforms.push('AmazonPrime')
+  }
+  console.log(platforms)
+  //console.log(platforms.toString())
 
   return (
     <div className="grid grid-cols-6 gap-4">
@@ -36,91 +56,23 @@ export default function Platform() {
         <div className="mt-28 grid grid-cols-4 gap-4">
 
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={disney} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
-            </div>
+            <Options id='disney' checked={plat_disney} onChange={setDisney} img={disney}>
+            </Options>
           </label>
           
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={hbo} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
-            </div>
+            <Options id='disney' checked={plat_hbo} onChange={setHbo} img={hbo}>
+            </Options>
           </label>
 
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={netflix} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
-            </div>
+            <Options id='disney' checked={plat_netflix} onChange={setNetflix} img={netflix}>
+            </Options>
           </label>
           
           <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <input type="checkbox" className="peer sr-only" name="size-choice" />
-            <span className="absolute top-2 right-2 z-10 opacity-0 transition-all peer-checked:opacity-100">
-              <svg xmlns="http://www.w3.org/2000/svg" className="fill-blue-500 stroke-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <circle cx="12" cy="12" r="9" />
-                <path d="M9 12l2 2l4 -4" />
-              </svg>
-            </span>
-            <div className="overflow-hidden rounded-lg shadow-md ring ring-transparent grayscale transition-all active:scale-95 peer-checked:ring-blue-500 peer-checked:grayscale-0">
-              <div>
-                <Image 
-                  src={prime} 
-                  alt="" 
-                  quality={100}
-                  width={200}
-                  height={200}
-                />
-              </div>
-            </div>
+            <Options id='disney' checked={plat_prime} onChange={setPrime} img={prime}>
+            </Options>
           </label>
 
         </div>
