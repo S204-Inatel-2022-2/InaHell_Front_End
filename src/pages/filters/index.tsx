@@ -9,6 +9,17 @@ import InputRangeSlider from '../../components/InputRange';
 import ToggleSwitch from '../../components/Toggle/toggleSwitch'
 //import currentYear from '../../components/CurrentYear/getCurrentYear'
 
+/*
+export class getData{
+  static age = 0
+  static year = 0
+  static duration =  0
+  static movie_or_series = 'filme_serie'
+  constructor(idade:number, ano: number, duracao: number, filme_serie: string){
+  }
+}
+*/
+
 export default function Filter() {
 
   const [serie, setMovie] = useState(false)
@@ -22,7 +33,13 @@ export default function Filter() {
     movie_or_series = 'TV Show'
   }
 
+/*
+  let data = new getData(age, year, duration, movie_or_series)
+  console.log(data)
+*/
+
   return (
+
     <div className="grid grid-cols-6 gap-4">
 
       <div className='ml-6 mt-10'>
